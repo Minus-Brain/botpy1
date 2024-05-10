@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title> Music </title>
+	<link rel="stylesheet" type="text/css" href="music.css">
+</head>
+<body>
+	<header>
+		<nav class="nav">
+			<ul>
+			  <li><a class="active" href="home.html" target=_blank>Home</a></li>
+			  <li><a href="music.html" target=_blank>Music</a></li>
+			  <li><a href="history.html" target=_blank>History </a></li>
+			  <li><a href="contactus.html" target=_blank>Log in</a></li>
+			  <ul class="nav_header">
+				<li><img src="images/facebook.png"></li> 	
+				<li><img src="images/instagram.jpg"></li>
+			  </ul>
+			</ul>
+		</nav>
+	</header>
+	<h1 class="h1music">Ateez songs</h1>
+	<div id="audioPlayer">
+		<h2 id="trackName"></h2>
+		<audio id="audio" controls></audio>
+		<div id="controls">
+		  <button id="prevButton">&lt;&lt;</button>
+		  <button id="nextButton">&gt;&gt;</button>
+		</div>
+	  </div>
+
+	<script language="JavaScript">
+document.addEventListener("DOMContentLoaded", function() {
+  const audio = document.getElementById('audio');
+  const prevButton = document.getElementById('prevButton');
+  const nextButton = document.getElementById('nextButton');
+  const trackName = document.getElementById('trackName');
+  const tracks = [
+    { name: 'Wonderland', source: 'music/track1.mp3' },
+    { name: 'Say my name', source: 'music/track2.mp3' },
+    { name: 'HALA HALA', source: 'music/track3.mp3' },
+    { name: 'Wave', source: 'music/track4.mp3' },
+    { name: 'Pirate King', source: 'music/track5.mp3' }
+  ];
+  let currentIndex = 0;
+  
+  // Load the first track
+  loadTrack(currentIndex);
+
+  // Function to load a track
+  function loadTrack(index) {
+    const track = tracks[index];
+    audio.src = track.source;
+    audio.play();
+    trackName.textContent = track.name;
+  }
+
+  // Play next track
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % tracks.length;
+    loadTrack(currentIndex);
+  });
+
+  // Play previous track
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+    loadTrack(currentIndex);
+  });
+
+  // Play next track when current track ends
+  audio.addEventListener('ended', () => {
+    currentIndex = (currentIndex + 1) % tracks.length;
+    loadTrack(currentIndex);
+  });
+});
+
+	</script>
+	<main>
+	
+	</main>
+	
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title> Contact us </title>
+	<link rel="stylesheet" type="text/css" href="contactus.css">
+</head>
+<body>
+	<header>
+		<nav class="nav">
+			<ul>
+			  <li><a class="active" href="home.html" target=_blank>Home</a></li>
+			  <li><a href="music.html" target=_blank>Music</a></li>
+			  <li><a href="history.html" target=_blank>History </a></li>
+			  <li><a href="contactus.html" target=_blank>Log in</a></li>
+			  <ul class="nav_header">
+				<li><img src="images/facebook.png"></li> 	
+				<li><img src="images/instagram.jpg"></li>
+			  </ul>
+			</ul>
+		</nav>
+	</header>
+	<iframe
+	id="inlineFrameExample"
+	title="Inline Frame Example"
+	width="400"
+	height="300"
+	src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.863543972949!2d126.91627109064181!3d37.5582785999499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c99e0c6dd2145%3A0xb224768a182d13a7!2sKQ%20ENTERTAINMENT!5e0!3m2!1sru!2sam!4v1714935666315!5m2!1sru!2sam">
+  </iframe>
+	<div class="container right-panel-active">
+		<!-- Sign Up -->
+		<div class="container__form container--signup">
+			<form action="#" class="form" id="form1">
+				<h2 class="form__title">Sign Up</h2>
+				<input type="text" placeholder="User" class="input" />
+				<input type="email" placeholder="Email" class="input" />
+				<input type="password" placeholder="Password" class="input"/>
+					<legend>Gender</legend>
+				  
+					<div>
+					  <input type="radio" id="huey" name="drone" value="huey" checked />
+					  <label for="huey">Male</label>
+					</div>
+				  
+					<div>
+					  <input type="radio" id="dewey" name="drone" value="dewey" />
+					  <label for="dewey">Female</label>
+					</div>
+
+					<legend>Are you a robot?</legend>
+				  
+					<div>
+					  <input type="checkbox" id="scales" name="scales" checked />
+					  <label for="scales">I am not a robot</label>
+					</div>
+				  
+				  
+				<button class="btn">Submit</button>
+			</form>
+		</div>
+	
+		<!-- Sign In -->
+		<div class="container__form container--signin">
+			<form action="#" class="form" id="form2">
+				<h2 class="form__title">Sign In</h2>
+				<input type="email" placeholder="Email" class="input" />
+				<input type="password" placeholder="Password" class="input" />
+				<a href="#" class="link">Forgot your password?</a>
+				<button class="btn">Sign In</button>
+			</form>
+		</div>
+	
+		<!-- Overlay -->
+		<div class="container__overlay">
+			<div class="overlay">
+				<div class="overlay__panel overlay--left">
+					<button class="btn" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay__panel overlay--right">
+					<button class="btn" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script lang="Javascript">
+		const signInBtn = document.getElementById("signIn");
+		const signUpBtn = document.getElementById("signUp");
+		const fistForm = document.getElementById("form1");
+		const secondForm = document.getElementById("form2");
+		const container = document.querySelector(".container");
+
+		signInBtn.addEventListener("click", () => {
+			container.classList.remove("right-panel-active");
+		});
+
+		signUpBtn.addEventListener("click", () => {
+			container.classList.add("right-panel-active");
+		});
+
+		fistForm.addEventListener("submit", (e) => e.preventDefault());
+		secondForm.addEventListener("submit", (e) => e.preventDefault());
+
+	</script>
+	<main>
+	
+	</main>
+	
+</body>
+</html>
